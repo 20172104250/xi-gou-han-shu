@@ -10,10 +10,12 @@ protected:
 	int feet;
 	int inches;
 public:
+	CFeet(int of, int oi);
+	CFeet();
 	~CFeet();
 	void display();
-	int getfeet;
-	int getinches;
+	int getfeet();
+	int getinches();
 };
 CFeet::CFeet()
 {
@@ -51,7 +53,7 @@ public:
 	CMyfeet(int of, int oi);
 	~CMyfeet();
 };
-CMyfeet::CMyfeet
+CMyfeet::CMyfeet()
 {
 	cout << "派生类默认构造函数" << feet << "英尺" << inches << "英尺" << endl;
 }
@@ -63,10 +65,13 @@ CMyfeet::CMyfeet(int f, int i) :CFeet(f, i)
 }
 CMyfeet::~CMyfeet()
 {
+	cout << "派生类析构函数" << feet << "英尺" << inches << "英寸" << endl;
 
 }
 int main()
 {
+	CMyfeet tf1(3, 6);
+	tf1.display();
     return 0;
 }
 
